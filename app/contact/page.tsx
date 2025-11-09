@@ -128,11 +128,18 @@ export default function ContactPage() {
               for immediate assistance.
             </p>
             <form 
-              action="mailto:rawr88098809@gmail.com"
+              action="https://api.web3forms.com/submit"
               method="POST"
-              encType="text/plain"
               className="space-y-6"
             >
+              {/* Web3Forms Access Key - Get yours free at https://web3forms.com */}
+              <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+              <input type="hidden" name="subject" value="New Contact Form Submission from RMM Website" />
+              <input type="hidden" name="from_name" value="RMM Service of Process Website" />
+              
+              {/* Honeypot Spam Protection */}
+              <input type="checkbox" name="botcheck" className="hidden" style={{display: 'none'}} />
+
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                   Full Name *
