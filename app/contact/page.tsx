@@ -122,24 +122,17 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div className="bg-white rounded-xl p-8 shadow-lg">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Request a Quote</h2>
+            <p className="mb-4 text-sm text-gray-600">
+              Fill out the form below and we&apos;ll get back to you within 24 hours, or call us at{' '}
+              <a href="tel:4056059364" className="text-blue-600 hover:underline font-semibold">(405) 605-9364</a>{' '}
+              for immediate assistance.
+            </p>
             <form 
-              name="contact"
+              action="mailto:rawr88098809@gmail.com"
               method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
+              encType="text/plain"
               className="space-y-6"
             >
-              {/* Honeypot field for spam protection */}
-              <input type="hidden" name="form-name" value="contact" />
-              <div className="hidden">
-                <label>
-                  Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
-                </label>
-              </div>
-
-              {/* Email destination */}
-              <input type="hidden" name="email-to" value="rawr88098809@gmail.com" />
-
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                   Full Name *
