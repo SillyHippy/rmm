@@ -100,7 +100,7 @@ export function ProcessServerFAQ() {
         {/* Additional Help */}
         <div className="mt-12 text-center">
           <p className="text-gray-600 mb-4">
-            Don't see your question answered?
+            Don&apos;t see your question answered?
           </p>
           <a 
             href="/contact"

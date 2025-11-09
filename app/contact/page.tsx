@@ -122,7 +122,24 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div className="bg-white rounded-xl p-8 shadow-lg">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Request a Quote</h2>
-            <form className="space-y-6">
+            <form 
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              className="space-y-6"
+            >
+              {/* Honeypot field for spam protection */}
+              <input type="hidden" name="form-name" value="contact" />
+              <div className="hidden">
+                <label>
+                  Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
+                </label>
+              </div>
+
+              {/* Email destination */}
+              <input type="hidden" name="email-to" value="rawr88098809@gmail.com" />
+
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                   Full Name *
@@ -132,7 +149,7 @@ export default function ContactPage() {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-lime focus:border-transparent"
                   placeholder="John Doe"
                 />
               </div>
@@ -146,7 +163,7 @@ export default function ContactPage() {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-lime focus:border-transparent"
                   placeholder="john@example.com"
                 />
               </div>
@@ -160,7 +177,7 @@ export default function ContactPage() {
                   id="phone"
                   name="phone"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-lime focus:border-transparent"
                   placeholder="(405) 555-0123"
                 />
               </div>
@@ -173,14 +190,15 @@ export default function ContactPage() {
                   id="service"
                   name="service"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-lime focus:border-transparent"
                 >
                   <option value="">Select a service...</option>
                   <option value="process-serving">Process Serving</option>
-                  <option value="court-filing">Court Filing</option>
-                  <option value="certified-service">Certified Registered Service</option>
+                  <option value="rush-service">Rush/Same Day Service</option>
                   <option value="skip-tracing">Skip Tracing</option>
-                  <option value="private-investigation">Private Investigation</option>
+                  <option value="notary">Notary Services</option>
+                  <option value="legal-notices">Legal Notices</option>
+                  <option value="wage-garnishment">Wage Garnishment</option>
                   <option value="other">Other</option>
                 </select>
               </div>
@@ -192,14 +210,14 @@ export default function ContactPage() {
                 <select
                   id="county"
                   name="county"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-lime focus:border-transparent"
                 >
                   <option value="">Select county...</option>
                   <option value="cleveland">Cleveland County</option>
                   <option value="canadian">Canadian County</option>
                   <option value="mcclain">McClain County</option>
                   <option value="grady">Grady County</option>
-                  <option value="other">Other</option>
+                  <option value="other">Other Oklahoma County</option>
                 </select>
               </div>
 
@@ -212,7 +230,7 @@ export default function ContactPage() {
                   name="message"
                   required
                   rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-lime focus:border-transparent"
                   placeholder="Please provide details about your process serving needs..."
                 ></textarea>
               </div>

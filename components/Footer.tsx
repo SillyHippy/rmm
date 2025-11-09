@@ -1,6 +1,7 @@
 'use client'
 
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Facebook, Linkedin } from "lucide-react";
 
 export function Footer() {
@@ -13,17 +14,14 @@ export function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img 
+              <Image 
                 src="/Logo.avif" 
                 alt="RMM Service of Process" 
+                width={48}
+                height={48}
                 className="h-12 w-auto"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  const fallback = e.currentTarget.nextElementSibling as HTMLElement;
-                  if (fallback) fallback.style.display = 'flex';
-                }}
               />
-              <div className="hidden w-10 h-10 bg-brand-lime rounded-lg items-center justify-center">
+              <div className="flex flex-col">
                 <span className="text-gray-900 font-bold text-lg">RMM</span>
               </div>
               <div>
@@ -163,17 +161,13 @@ export function Footer() {
                 aria-label="View Ryley McGee on NAPPS"
                 className="bg-slate-800/50 hover:bg-slate-800 p-4 rounded-lg transition-all duration-300 border border-slate-700 hover:border-brand-lime"
               >
-                <img 
+                <Image 
                   src="/Napps logo.avif" 
-                  alt="NAPPS Member Since 2024" 
+                  alt="NAPPS Member Since 2024"
+                  width={80}
+                  height={80}
                   className="h-20 w-auto"
-                  onError={(e) => { 
-                    e.currentTarget.style.display = 'none';
-                    const parent = e.currentTarget.parentElement;
-                    if (parent) {
-                      parent.innerHTML = '<span class="text-gray-400 text-sm">NAPPS Member</span>';
-                    }
-                  }} 
+                  unoptimized
                 />
               </a>
               <a 
@@ -183,17 +177,13 @@ export function Footer() {
                 aria-label="View Ryley McGee on OKPPSA"
                 className="bg-slate-800/50 hover:bg-slate-800 p-4 rounded-lg transition-all duration-300 border border-slate-700 hover:border-brand-lime"
               >
-                <img 
+                <Image 
                   src="/OKPPSA LOGO.avif" 
-                  alt="OKPPSA Member" 
+                  alt="OKPPSA Member"
+                  width={80}
+                  height={80}
                   className="h-20 w-auto"
-                  onError={(e) => { 
-                    e.currentTarget.style.display = 'none';
-                    const parent = e.currentTarget.parentElement;
-                    if (parent) {
-                      parent.innerHTML = '<span class="text-gray-400 text-sm">OKPPSA Member</span>';
-                    }
-                  }} 
+                  unoptimized
                 />
               </a>
             </div>

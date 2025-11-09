@@ -172,7 +172,7 @@ export default function ServicesPage() {
                   
                   <div className={isEven ? '' : 'lg:col-start-1 lg:row-start-1'}>
                     <div className="space-y-4">
-                      <h3 className="text-xl font-bold text-gray-900">What's Included:</h3>
+                      <h3 className="text-xl font-bold text-gray-900">What&apos;s Included:</h3>
                       <ul className="space-y-3">
                         {service.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start gap-3">

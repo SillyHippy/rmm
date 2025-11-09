@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -13,17 +14,15 @@ export function Header() {
         {/* Main Navigation */}
         <div className="flex justify-between items-center py-4">
           <Link href="/" className="flex items-center gap-3">
-            <img 
+            <Image 
               src="/Logo.avif" 
               alt="RMM Service of Process" 
+              width={64}
+              height={64}
               className="h-16 w-auto"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-                const fallback = e.currentTarget.nextElementSibling as HTMLElement;
-                if (fallback) fallback.style.display = 'flex';
-              }}
+              priority
             />
-            <div className="hidden w-12 h-12 bg-blue-600 rounded-lg items-center justify-center">
+            <div className="flex flex-col">
               <span className="text-white font-bold text-xl">RMM</span>
             </div>
             <div>
